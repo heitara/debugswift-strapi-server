@@ -1,4 +1,33 @@
-# 🚀 Getting started with Strapi
+# NodeJS based backend
+
+This project is a basic Strapi v. 4.25.3 setup.
+The codebase in TS. The configured DB is sqlite.
+
+This configuration is to locally simulate multipart requests.
+
+## How to check if everything works as expected?
+
+1. Be sure that you have node v 18 or newer.
+1. Run `npm i` to install all dependencies in the root folder.
+1. Rund `npm run develop` to start the local server. The default config is going to start a server on the following address: `localhost:1337`.
+1. Run the following command to check if the upload works fine.
+If you want to create an article with an associated asset.
+```bash
+curl --location 'http://localhost:1337/api/articles' \
+--form 'data="{\"title\":\"Sample article\", \"body\":\"plain text\"}"' \
+--form 'files.assets=@"/FULL.PATH.TO.JPG"'
+```
+If you want to upload a media.
+```bash
+curl --location 'http://localhost:1337/api/upload' \
+--form 'files=@"/FULL.PATH.TO.JPG"' \
+```
+
+To open the admin use the following credentials: `heitara  [at] gmail.com`.
+With the following Password007.
+
+
+## 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
